@@ -5,7 +5,7 @@
         <Company>Ben Hendel-Doying</Company>
         <Description>A collection of field-of-view/line-of-sight algorithms: ray cast, shadow cast, diamond-wall, and Milazzo's beveled-wall.</Description>
         <Copyright>2023 Ben Hendel-Doying</Copyright>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
 
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>line of sight field of view los fov algorithm ray cast shadow diamond wall beveled rogue roguelike roguelite</PackageTags>
@@ -13,12 +13,13 @@
         <RepositoryUrl>https://github.com/BenMakesGames/FoV</RepositoryUrl>
         <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
 
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
-
     <ItemGroup>
         <None Include="..\LICENSE.md">
             <Pack>True</Pack>
@@ -28,6 +29,17 @@
             <Pack>True</Pack>
             <PackagePath />
         </None>
+    </ItemGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="CLSCompliantAttribute">
+            <_Parameter1>true</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>
