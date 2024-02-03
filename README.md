@@ -28,7 +28,6 @@ For example:
 ```c#
 public sealed class MyMap: IFoVMap
 {
-    // Width and Height are required by IFoVMap:
     public int Width { get; }
     public int Height { get; }
 
@@ -47,6 +46,8 @@ public sealed class MyMap: IFoVMap
     ...
 }
 ```
+
+Another common implementation is to use a `Dictionary<(int X, int Y), MyTile>` collection to store the map.
 
 ## Call One of the FoV Algorithms
 
