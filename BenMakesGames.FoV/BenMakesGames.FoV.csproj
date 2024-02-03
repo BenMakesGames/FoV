@@ -5,7 +5,7 @@
         <Company>Ben Hendel-Doying</Company>
         <Description>A collection of field-of-view/line-of-sight algorithms: ray cast, shadow cast, diamond-wall, and Milazzo's beveled-wall.</Description>
         <Copyright>2023 Ben Hendel-Doying</Copyright>
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
 
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageTags>line of sight field of view los fov algorithm ray cast shadow diamond wall beveled rogue roguelike roguelite</PackageTags>

@@ -17,15 +17,11 @@ public sealed class RayCastFoV : IFoVAlgorithm
     /// </summary>
     public static HashSet<(int X, int Y)> Compute(IFoVMap map, (int X, int Y) origin, int radius)
     {
-        var visible = new HashSet<(int X, int Y)>();
-        visible.Add(origin);
+        var visible = new HashSet<(int X, int Y)> { origin };
 
         if (radius == 0) return visible;
 
-        var area = new Rectangle(0, 0, map.Width, map.Height);
-
-        if(radius >= 0)
-            area.Intersect(new Rectangle(origin.X - radius, origin.Y - radius, radius * 2 + 1, radius * 2 + 1));
+        var area = new Rectangle(origin.X - radius, origin.Y - radius, radius * 2 + 1, radius * 2 + 1);
 
         for(var x = area.Left; x < area.Right; x++)
         {
@@ -33,7 +29,7 @@ public sealed class RayCastFoV : IFoVAlgorithm
             TraceLine(map, visible, origin, x, area.Bottom - 1, radius);
         }
 
-        for(var y = area.Top + 1; y<area.Bottom - 1; y++)
+        for(var y = area.Top + 1; y < area.Bottom - 1; y++)
         {
             TraceLine(map, visible, origin, area.Left, y, radius);
             TraceLine(map, visible, origin, area.Right - 1, y, radius);
